@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Welfare Associative Group (S.W.A.G.) - Official Portal</title>
+    <!-- Google Fonts for Government Aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-navy: #0a2540;
+            --secondary-navy: #1a365d;
+            --accent-gold: #c59b27;
+            --gold-light: #f4e8c1;
+            --border-color: #cbd5e1;
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --success-green: #15803d;
+            --danger-red: #b91c1c;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Public Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Top Government Bar */
+        .gov-top-bar {
+            background-color: #051424;
+            color: #94a3b8;
+            font-size: 0.75rem;
+            padding: 4px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gov-top-bar span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Official Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
+            color: var(--white);
+            padding: 20px 0;
+            border-bottom: 4px solid var(--accent-gold);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .logo-box {
+            width: 85px;
+            height: 85px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px dashed rgba(197, 155, 39, 0.6);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8px;
+            color: var(--gold-light);
+            flex-shrink: 0;
+        }
+
+        .logo-box i {
+            font-size: 1.5rem;
+            margin-bottom: 2px;
+        }
+
+        .logo-box span {
+            font-size: 0.6rem;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .header-titles h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--white);
+        }
+
+        .header-titles p {
+            font-family: 'Merriweather', serif;
+            font-size: 0.9rem;
+            color: var(--gold-light);
+            font-style: italic;
+            margin-top: 2px;
+        }
+
+        .header-titles .sub-text {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            font-style: normal;
+            font-family: 'Public Sans', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #0d2847;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            display: block;
+            padding: 14px 20px;
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links li a:hover, .nav-links li a.active {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--accent-gold);
+            border-bottom-color: var(--accent-gold);
+        }
+
+        .admin-btn {
+            background-color: rgba(197, 155, 39, 0.15);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .admin-btn:hover {
+            background-color: var(--accent-gold);
+            color: var(--primary-navy);
+        }
+
+        /* Main Container */
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            flex-grow: 1;
+            width: 100%;
+        }
+
+        /* Page Layout */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Official Cards & Panels */
+        .gov-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-top: 3px solid var(--primary-navy);
+            border-radius: 4px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: var(--primary-navy);
+            border-bottom: 2px solid var(--gold-light);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: var(--accent-gold);
+        }
+
+        /* Stats Component */
+        .stats-banner {
+            background: linear-gradient(to right, #0a2540, #1e3a8a);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            border-left: 5px solid var(--accent-gold);
+        }
+
+        .stats-info h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gold-light);
+        }
+
+        .stats-info p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .stats-number {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 20px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Board Directory Grid */
+        .board-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .director-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .director-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .director-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--bg-light);
+            border: 2px solid var(--primary-navy);
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary-navy);
+        }
+
+        .director-name {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--primary-navy);
+        }
+
+        .director-role {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+            margin-bottom: 8px;
+        }
+
+        .director-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Notice Board Component */
+        .notice-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .notice-item {
+            border-left: 4px solid var(--primary-navy);
+            background: #f8fafc;
+            padding: 16px 20px;
+            border-radius: 0 4px 4px 0;
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .notice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .notice-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--primary-navy);
+        }
+
+        .notice-date {
+            font-size: 0.75rem;
+            background: var(--primary-navy);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 2px;
+            white-space: nowrap;
+        }
+
+        .notice-body {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .notice-empty {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            background: #fff;
+            border: 1px dashed var(--border-color);
+            border-radius: 4px;
+        }
+
+        .notice-empty i {
+            font-size: 2.5rem;
+            color: #cbd5e1;
+            margin-bottom: 12px;
+        }
+
+        /* Registration & Form Embed */
+        .form-embed-container {
+            width: 100%;
+            min-height: 550px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background: #fff;
+            position: relative;
+        }
+
+        .form-placeholder {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .workflow-box {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 4px;
+            padding: 16px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+        }
+
+        .workflow-box h4 {
+            color: #1e40af;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Admin Controls Drawer */
+        .admin-drawer {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 420px;
+            height: 100%;
+            background: #fff;
+            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            padding: 24px;
+            overflow-y: auto;
+        }
+
+        .admin-drawer.open {
+            display: block;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-navy);
+            margin-bottom: 20px;
+        }
+
+        .close-admin {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary-navy);
+            margin-bottom: 6px;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.85rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-navy);
+            color: #fff;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-navy);
+        }
+
+        .btn-secondary {
+            background: var(--accent-gold);
+            color: var(--primary-navy);
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
+        /* Password Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top:0; left:0; right:0; bottom:0;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.open {
+            display: flex;
+        }
+
+        .modal-card {
+            background: #fff;
+            padding: 24px;
+            border-radius: 6px;
+            width: 100%;
+            max-width: 360px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            border-top: 4px solid var(--accent-gold);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-navy);
+            color: #94a3b8;
+            padding: 30px 0 15px;
+            margin-top: auto;
+            border-top: 3px solid var(--accent-gold);
+            font-size: 0.8rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-info h4 {
+            color: var(--white);
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 20px auto 0;
+            padding: 15px 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.75rem;
+        }
+
+        /* Status Badge */
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge-official {
+            background-color: var(--gold-light);
+            color: var(--primary-navy);
+            border: 1px solid var(--accent-gold);
+        }
+
+        /* Simulation Log */
+        .sim-log {
+            background: #1e293b;
+            color: #38bdf8;
+            padding: 12px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.75rem;
+            max-height: 150px;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Official Top Ribbon -->
+    <div class="gov-top-bar">
+        <span><i class="fa-solid fa-building-columns"></i> Official Institutional Governance Portal</span>
+        <span><i class="fa-solid fa-shield-halved"></i> Student Welfare Associative Group (S.W.A.G.)</span>
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo-box" id="logoBox">
+                <i class="fa-solid fa-building-flag"></i>
+                <span>Logo Crest</span>
+            </div>
+            <div class="header-titles">
+                <h1>Student Welfare Associative Group</h1>
+                <p>"Bridging institutional governance and student representation with democratic integrity."</p>
+                <div class="sub-text">Official Democratic Liaison Body • Institutional Representative Secretariat</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#" class="active" onclick="switchPage('home', event)"><i class="fa-solid fa-house"></i> Home & Directorate</a></li>
+                <li><a href="#" onclick="switchPage('registration', event)"><i class="fa-solid fa-file-signature"></i> Official Registration</a></li>
+                <li><a href="#" onclick="switchPage('notices', event)"><i class="fa-solid fa-bullhorn"></i> Notice Board</a></li>
+            </ul>
+            <button class="admin-btn" onclick="openAdminPanel()">
+                <i class="fa-solid fa-lock"></i> <span id="adminBtnText">Admin Access</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Content Area -->
+    <main>
+
+        <!-- PAGE 1: HOME PAGE -->
+        <div id="home" class="page active">
+            <!-- Preamble / Mission Statement -->
+            <div class="gov-card">
+                <div class="section-title">
+                    <i class="fa-solid fa-landmark"></i> Official Governance Preamble
+                </div>
+                <p style="font-size: 0.95rem; color: #334155;">
+                    The <strong>Student Welfare Associative Group (S.W.A.G.)</strong> operates as the official, democratic liaison body established to bridge communication, operational affairs, and welfare policy between the institutional school staff and the broader student body. Through structured governance and formal dialogue, S.W.A.G. advocates for student rights, transparent welfare initiatives, and harmonious institutional development.
+                </p>
+            </div>
+
+            <!-- Roster Stats -->
+            <div class="stats-banner">
+                <div class="stats-info">
+                    <h3>Official Member Roll Count</h3>
+                    <p>Total validated and inducted representatives on record</p>
+                </div>
+                <div class="stats-number" id="memberCountDisplay">0</div>
+            </div>
+
+            <!-- Board of Directors Section -->
+            <div class="gov-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <div class="section-title" style="margin-bottom:0; border-bottom:none;">
+                        <i class="fa-solid fa-user-tie"></i> Current Board of Directors
+                    </div>
+                    <span class="badge badge-official">Governing Executive Council</span>
+                </div>
+                <div class="board-grid" id="boardGrid">
+                    <!-- Dynamic Loading via Script -->
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 2: REGISTRATION PAGE -->
+        <div id="registration" class="page">
+            <div class="gov-card">
+                <div class="section-title">
+                    <i class="fa-solid fa-pen-to-square"></i> Candidate Application & Induction Secretariat
+                </div>
+                
+                <div class="workflow-box">
+                    <h4><i class="fa-solid fa-circle-info"></i> Official Candidate Acceptance Workflow</h4>
+                    <p>1. Submit the official induction form below. Form responses are routed to <strong>sangledarsheel@gmail.com</strong> for executive evaluation.</p>
+                    <p>2. Upon candidate ratification, an official induction confirmation and designated group role will be issued via email.</p>
+                </div>
+
+                <!-- Google Form Container -->
+                <div class="form-embed-container" id="formContainer">
+                    <div class="form-placeholder">
+                        <i class="fa-solid fa-clipboard-list" style="font-size: 3rem; color: var(--primary-navy); margin-bottom: 12px;"></i>
+                        <h3>Official Intake Form Embed</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; max-width: 500px; margin: 8px auto 16px;">
+                            The Google Intake Form is ready to be linked. Admin authority can configure the embed URL in Admin Settings.
+                        </p>
+                        <button class="btn-secondary" onclick="openAdminPanel()">Configure Form URL (Admin)</button>
+                    </div>
+                </div>
+
+                <!-- Workflow Simulation & Admin Processing Console -->
+                <div style="margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 20px;">
+                    <div class="section-title" style="font-size: 1.1rem;">
+                        <i class="fa-solid fa-envelope-circle-check"></i> Candidate Induction Email & Approval Desk (Admin Protected)
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">
+                        Use this official portal interface to issue formal induction emails directly to accepted candidates and update the institutional roster spreadsheet.
+                    </p>
+
+                    <form id="approvalForm" onsubmit="handleCandidateApproval(event)" style="background: #f1f5f9; padding: 16px; border-radius: 4px; border: 1px solid var(--border-color);">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                            <div class="form-group">
+                                <label>Candidate Full Name</label>
+                                <input type="text" id="candName" placeholder="e.g. Rahul Sharma" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Candidate Email Address</label>
+                                <input type="email" id="candEmail" placeholder="candidate@student.edu" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Assigned Governance Role (Set by Head Secretariat)</label>
+                            <input type="text" id="candRole" placeholder="e.g. Welfare Officer / Representative" required>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: auto;"><i class="fa-solid fa-paper-plane"></i> Ratify Candidate & Issue Official Email</button>
+                    </form>
+
+                    <div id="simLog" class="sim-log" style="display:none;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 3: NOTICE BOARD -->
+        <div id="notices" class="page">
+            <div class="gov-card">
+                <div class="section-title">
+                    <i class="fa-solid fa-scroll"></i> Official Circulars & Notice Board
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">
+                    Public repository for official memoranda, executive decrees, and organizational announcements.
+                </p>
+
+                <div id="noticeList" class="notice-list">
+                    <!-- Dynamic notices or blank state -->
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Admin Authorization Password Modal -->
+    <div class="modal-overlay" id="passwordModal">
+        <div class="modal-card">
+            <div class="section-title" style="font-size: 1.1rem; border:none; margin-bottom: 12px;">
+                <i class="fa-solid fa-lock"></i> Restricted Administrative Access
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px;">
+                Please enter the authorized editing password to modify website configuration, board rosters, or process approvals.
+            </p>
+            <form onsubmit="verifyPassword(event)">
+                <div class="form-group">
+                    <label>Editing Password</label>
+                    <input type="password" id="adminPasswordInput" placeholder="Enter password..." required autofocus>
+                </div>
+                <div style="display:flex; gap: 8px;">
+                    <button type="submit" class="btn-primary">Authenticate</button>
+                    <button type="button" class="btn-secondary" onclick="closePasswordModal()" style="background:#cbd5e1; color:#1e293b;">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Management Drawer -->
+    <div class="admin-drawer" id="adminDrawer">
+        <div class="admin-header">
+            <h3 style="font-family:'Cinzel', serif; font-size: 1.1rem; color: var(--primary-navy);"><i class="fa-solid fa-sliders"></i> Secretariat Control Panel</h3>
+            <button class="close-admin" onclick="closeAdminPanel()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div style="margin-bottom: 20px; padding: 10px; background: #f8fafc; border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8rem;">
+            <i class="fa-solid fa-user-shield" style="color: var(--success-green);"></i> Authenticated Administrator
+            <button onclick="lockAdmin()" style="float:right; border:none; background:none; color:var(--danger-red); cursor:pointer; font-weight:700;">Log Out</button>
+        </div>
+
+        <!-- Google Form Config -->
+        <div class="form-group">
+            <label>Embed Google Form URL</label>
+            <input type="url" id="adminFormUrl" placeholder="https://docs.google.com/forms/d/e/.../viewform?embedded=true">
+            <button class="btn-primary" style="margin-top:6px;" onclick="saveFormUrl()">Update Form Link</button>
+        </div>
+
+        <hr style="margin: 20px 0; border:0; border-top: 1px solid var(--border-color);">
+
+        <!-- Board Data Management -->
+        <div class="form-group">
+            <label>Board of Directors Roster (JSON / CSV Data Source)</label>
+            <textarea id="adminBoardData" rows="6" style="font-family: monospace; font-size:0.75rem;" placeholder='[{"name":"John Doe","role":"Director","desc":"Student Affairs"}]'></textarea>
+            <button class="btn-primary" style="margin-top:6px;" onclick="saveBoardData()">Update Board Directory</button>
+        </div>
+
+        <hr style="margin: 20px 0; border:0; border-top: 1px solid var(--border-color);">
+
+        <!-- Notice Board Data Management -->
+        <div class="form-group">
+            <label>Notice Board Memoranda (JSON Data Source)</label>
+            <textarea id="adminNoticeData" rows="6" style="font-family: monospace; font-size:0.75rem;" placeholder='[{"title":"Meeting Circular","date":"2026-03-30","body":"Details here..."}]'></textarea>
+            <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 4px;">Leave array empty <code>[]</code> to display blank notice board.</p>
+            <button class="btn-primary" style="margin-top:6px;" onclick="saveNoticeData()">Update Notice Board</button>
+        </div>
+
+        <hr style="margin: 20px 0; border:0; border-top: 1px solid var(--border-color);">
+
+        <!-- Security Password Settings -->
+        <div class="form-group">
+            <label>Update Editing Password</label>
+            <input type="password" id="newAdminPassword" placeholder="New Password">
+            <button class="btn-primary" style="margin-top:6px;" onclick="changeAdminPassword()">Set New Password</button>
+        </div>
+    </div>
+
+    <!-- Official Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <h4>Student Welfare Associative Group (S.W.A.G.)</h4>
+                <p>Official Institutional Representative Assembly & Governance Secretariat</p>
+                <p style="margin-top: 4px;"><i class="fa-solid fa-envelope"></i> Primary Contact: sangledarsheel@gmail.com</p>
+            </div>
+            <div>
+                <p style="font-weight: 700; color: #fff;">Governance Record</p>
+                <p>Official democratic medium linking student body & staff.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; Student Welfare Associative Group (S.W.A.G.). All Rights Reserved. Official Institutional Document Portal.
+        </div>
+    </footer>
+
+    <!-- Application Script -->
+    <script>
+        // Default System Data & Password Configuration
+        const DEFAULT_PASSWORD = "SWAG2026!";
+        
+        let boardData = [
+            { name: "Executive Secretariat", role: "Primary Directorate", desc: "Institutional Liaison & Executive Representative Body" },
+            { name: "Welfare Directorate", role: "Council Committee", desc: "Student Staff Co-ordination & Policy Affairs" }
+        ];
+
+        let noticesData = []; // Blank by default as requested
+
+        let acceptedCandidates = [
+            { name: "Executive Directorate Member", email: "sangledarsheel@gmail.com", role: "Primary Director" }
+        ];
+
+        let googleFormEmbedUrl = "";
+
+        // Session Authentication State
+        let isAuthenticated = false;
+
+        // Initialize Page
+        window.addEventListener('DOMContentLoaded', () => {
+            loadStoredData();
+            renderBoard();
+            renderNotices();
+            updateMemberCount();
+        });
+
+        // Navigation Switcher
+        function switchPage(pageId, event) {
+            if(event) event.preventDefault();
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+            
+            document.getElementById(pageId).classList.add('active');
+            if(event && event.currentTarget) event.currentTarget.classList.add('active');
+        }
+
+        // Render Board Directory
+        function renderBoard() {
+            const grid = document.getElementById('boardGrid');
+            grid.innerHTML = '';
+
+            if(!boardData || boardData.length === 0) {
+                grid.innerHTML = '<p style="color:var(--text-muted);">No board entries configured.</p>';
+                return;
+            }
+
+            boardData.forEach(member => {
+                const card = document.createElement('div');
+                card.className = 'director-card';
+                card.innerHTML = `
+                    <div class="director-avatar"><i class="fa-solid fa-user-shield"></i></div>
+                    <div class="director-name">${escapeHtml(member.name)}</div>
+                    <div class="director-role">${escapeHtml(member.role)}</div>
+                    <div class="director-desc">${escapeHtml(member.desc || '')}</div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Render Notice Board
+        function renderNotices() {
+            const container = document.getElementById('noticeList');
+            container.innerHTML = '';
+
+            if (!noticesData || noticesData.length === 0) {
+                container.innerHTML = `
+                    <div class="notice-empty">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <h4>No Active Notices or Circulars</h4>
+                        <p style="font-size:0.85rem; margin-top:4px;">There are currently no official memoranda or notices issued on record.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            noticesData.forEach(notice => {
+                const item = document.createElement('div');
+                item.className = 'notice-item';
+                item.innerHTML = `
+                    <div class="notice-header">
+                        <div class="notice-title"><i class="fa-solid fa-circle-dot" style="color:var(--accent-gold); font-size:0.7rem;"></i> ${escapeHtml(notice.title)}</div>
+                        <div class="notice-date">${escapeHtml(notice.date)}</div>
+                    </div>
+                    <div class="notice-body">${escapeHtml(notice.body)}</div>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        // Update Accepted Roster Count
+        function updateMemberCount() {
+            document.getElementById('memberCountDisplay').textContent = acceptedCandidates.length;
+        }
+
+        // Security Authentication
+        function openAdminPanel() {
+            if (isAuthenticated) {
+                document.getElementById('adminDrawer').classList.add('open');
+            } else {
+                document.getElementById('passwordModal').classList.add('open');
+            }
+        }
+
+        function closePasswordModal() {
+            document.getElementById('passwordModal').classList.remove('open');
+        }
+
+        function verifyPassword(e) {
+            e.preventDefault();
+            const inputPass = document.getElementById('adminPasswordInput').value;
+            const currentPass = localStorage.getItem('swag_admin_pass') || DEFAULT_PASSWORD;
+
+            if (inputPass === currentPass) {
+                isAuthenticated = true;
+                closePasswordModal();
+                document.getElementById('adminPasswordInput').value = '';
+                document.getElementById('adminBtnText').textContent = 'Admin Panel (Unlocked)';
+                document.getElementById('adminDrawer').classList.add('open');
+                
+                // Populate current data in textareas
+                document.getElementById('adminBoardData').value = JSON.stringify(boardData, null, 2);
+                document.getElementById('adminNoticeData').value = JSON.stringify(noticesData, null, 2);
+                document.getElementById('adminFormUrl').value = googleFormEmbedUrl;
+            } else {
+                alert('Unauthorized Password. Access Denied.');
+            }
+        }
+
+        function closeAdminPanel() {
+            document.getElementById('adminDrawer').classList.remove('open');
+        }
+
+        function lockAdmin() {
+            isAuthenticated = false;
+            document.getElementById('adminBtnText').textContent = 'Admin Access';
+            closeAdminPanel();
+            alert('Admin session locked.');
+        }
+
+        // Data Management Handlers
+        function saveBoardData() {
+            if (!isAuthenticated) return alert('Authentication required.');
+            try {
+                const val = document.getElementById('adminBoardData').value;
+                boardData = JSON.parse(val);
+                localStorage.setItem('swag_board_data', JSON.stringify(boardData));
+                renderBoard();
+                alert('Board of Directors roster successfully updated!');
+            } catch(e) {
+                alert('Invalid JSON formatting in Board Data.');
+            }
+        }
+
+        function saveNoticeData() {
+            if (!isAuthenticated) return alert('Authentication required.');
+            try {
+                const val = document.getElementById('adminNoticeData').value;
+                noticesData = JSON.parse(val);
+                localStorage.setItem('swag_notice_data', JSON.stringify(noticesData));
+                renderNotices();
+                alert('Notice board dataset updated!');
+            } catch(e) {
+                alert('Invalid JSON formatting in Notice Data.');
+            }
+        }
+
+        function saveFormUrl() {
+            if (!isAuthenticated) return alert('Authentication required.');
+            const url = document.getElementById('adminFormUrl').value.trim();
+            googleFormEmbedUrl = url;
+            localStorage.setItem('swag_form_url', url);
+            
+            const container = document.getElementById('formContainer');
+            if(url) {
+                container.innerHTML = `<iframe src="${escapeHtml(url)}" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>`;
+            } else {
+                container.innerHTML = `
+                    <div class="form-placeholder">
+                        <i class="fa-solid fa-clipboard-list" style="font-size: 3rem; color: var(--primary-navy); margin-bottom: 12px;"></i>
+                        <h3>Official Intake Form Embed</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; max-width: 500px; margin: 8px auto 16px;">
+                            The Google Intake Form is ready to be linked. Admin authority can configure the embed URL in Admin Settings.
+                        </p>
+                        <button class="btn-secondary" onclick="openAdminPanel()">Configure Form URL (Admin)</button>
+                    </div>
+                `;
+            }
+            alert('Form URL configured.');
+        }
+
+        function changeAdminPassword() {
+            if (!isAuthenticated) return alert('Authentication required.');
+            const newPass = document.getElementById('newAdminPassword').value.trim();
+            if (newPass.length < 4) return alert('Password must be at least 4 characters long.');
+            
+            localStorage.setItem('swag_admin_pass', newPass);
+            document.getElementById('newAdminPassword').value = '';
+            alert('Administrative editing password updated successfully!');
+        }
+
+        // Workflow Simulation (Approval & Email Dispatch)
+        function handleCandidateApproval(e) {
+            e.preventDefault();
+            if (!isAuthenticated) {
+                alert('Security Notice: Candidate approval and roster updates require Admin Authentication. Opening login dialog.');
+                openAdminPanel();
+                return;
+            }
+
+            const name = document.getElementById('candName').value.trim();
+            const email = document.getElementById('candEmail').value.trim();
+            const role = document.getElementById('candRole').value.trim();
+
+            acceptedCandidates.push({ name, email, role });
+            localStorage.setItem('swag_accepted_candidates', JSON.stringify(acceptedCandidates));
+            updateMemberCount();
+
+            // Log output to simulate real email API dispatch
+            const log = document.getElementById('simLog');
+            log.style.display = 'block';
+            log.innerHTML = `
+[WORKFLOW DISPATCH LOG - ${new Date().toLocaleTimeString()}]
+1. Routing application packet to Executive Secretariat (sangledarsheel@gmail.com)... SUCCESS
+2. Processing Candidate: "${name}" (${email})
+3. Assigned Executive Role: "${role}"
+4. Dispatching Official Congratulations Email to candidate (${email})... SUCCESS
+   - Subject: Official Acceptance & Appointment - Student Welfare Associative Group
+   - Content: Congratulations ${name}, you have been officially accepted as ${role}.
+5. Master Spreadsheet Roster updated. Total Inducted Members: ${acceptedCandidates.length}
+            `;
+
+            document.getElementById('approvalForm').reset();
+            alert(`Candidate ${name} successfully ratified! Acceptance email dispatched and member count updated.`);
+        }
+
+        // Storage Utilities
+        function loadStoredData() {
+            const storedBoard = localStorage.getItem('swag_board_data');
+            if (storedBoard) {
+                try { boardData = JSON.parse(storedBoard); } catch(e){}
+            }
+
+            const storedNotice = localStorage.getItem('swag_notice_data');
+            if (storedNotice) {
+                try { noticesData = JSON.parse(storedNotice); } catch(e){}
+            }
+
+            const storedCandidates = localStorage.getItem('swag_accepted_candidates');
+            if (storedCandidates) {
+                try { acceptedCandidates = JSON.parse(storedCandidates); } catch(e){}
+            }
+
+            const storedUrl = localStorage.getItem('swag_form_url');
+            if (storedUrl) {
+                googleFormEmbedUrl = storedUrl;
+                document.getElementById('formContainer').innerHTML = `<iframe src="${escapeHtml(storedUrl)}" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>`;
+            }
+        }
+
+        function escapeHtml(str) {
+            return String(str || '').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+        }
+    </script>
+</body>
+</html>
